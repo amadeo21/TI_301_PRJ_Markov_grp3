@@ -1,105 +1,67 @@
-// =====================================================
-// main_markov.c
-// Exécutable "markov"
-// - Lecture du fichier de graphe
-// - Affichage de la liste d’adjacence
-// - Vérification des probabilités (graphe de Markov)
-// - Export Mermaid pour visualisation
-// =====================================================
-
-#include "markov.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include "markov.h"
+#include "hasse.h"
 
-// -----------------------------------------------------
-// Fonction d’aide : affichage de la syntaxe d’utilisation
-// -----------------------------------------------------
-static void usage(const char* prog) {
-    fprintf(stderr,
-        "Usage : %s <fichier_graphe.txt> [--print] [--verify] [--mermaid <out.mmd>]\n"
-        "Exemple: %s data/exemple1.txt --print --verify --mermaid graphe.mmd\n",
-        prog, prog);
-}
-
-// -----------------------------------------------------
-// Fonction principale
-// -----------------------------------------------------
-int main(int argc, char** argv) {
-
-    // Vérifie qu’un fichier a bien été passé en argument
+int main(int argc, char **argv)
+{
     if (argc < 2) {
-        usage(argv[0]);
+        printf("Usage: %s <fichier_graphe>\n", argv[0]);
         return EXIT_FAILURE;
     }
 
-    const char* infile = argv[1];
-    int i = 2;
-
-    // Flags pour les options
-    int do_print = 0;
-    int do_verify = 0;
-    int do_mmd = 0;
-
-    const char* mmd_out = NULL;
-
-    // Lecture des arguments optionnels
-    while (i < argc) {
-        if (strcmp(argv[i], "--print") == 0) {
-            do_print = 1;
-            i++;
-        }
-        else if (strcmp(argv[i], "--verify") == 0) {
-            do_verify = 1;
-            i++;
-        }
-        else if (strcmp(argv[i], "--mermaid") == 0 && i + 1 < argc) {
-            do_mmd = 1;
-            mmd_out = argv[i + 1];
-            i += 2;
-        }
-        else {
-            usage(argv[0]);
-            return EXIT_FAILURE;
-        }
+    const char *filename = argv[1];
+    t_graph *g = read_graph(filename);
+    if (!g) {
+        fprintf(stderr, "Impossible de lire le graphe.\n");
+        return EXIT_FAILURE;
     }
 
-    // -------------------------------------------------
-    // 1. Lecture du graphe depuis le fichier texte
-    // -------------------------------------------------
-    AdjList G = readGraph(infile);
+    printf("=== PARTIE 1 : GRAPHE ===\n");
+    print_adj_list(g);
+    check_markov_graph(g, 0.01f);
+    export_mermaid_graph(g, "graph_mermaid.md");
+    printf("Fichier Mermaid du graphe : graph_mermaid.md\n\n");
 
-    // -------------------------------------------------
-    // 2. Affichage de la liste d’adjacence (optionnel)
-    // -------------------------------------------------
-    if (do_print)
-        adj_print(&G);
+    printf("=== PARTIE 2 : TARJAN / PARTITION ===\n");
+    t_partition part = tarjan_partition(g);
+    print_partition(&part);
 
-    // -------------------------------------------------
-    // 3. Vérification du graphe de Markov (optionnel)
-    // -------------------------------------------------
-    if (do_verify)
-        verify_markov(&G, 0.99f, 1.01f);
+    t_link_array links;
+    init_link_array(&links);
+    build_class_links(g, &part, &links);
+    removeTransitiveLinks(&links);
+    export_mermaid_hasse(&part, &links, "hasse_mermaid.md");
+    printf("Fichier Mermaid du diagramme de Hasse : hasse_mermaid.md\n\n");
 
-    // -------------------------------------------------
-    // 4. Export au format Mermaid (optionnel)
-    // -------------------------------------------------
-    if (do_mmd) {
-        if (!mmd_out) {
-            fprintf(stderr, "--mermaid nécessite un chemin de sortie\n");
-            adj_free(&G);
-            return EXIT_FAILURE;
-        }
-        if (write_mermaid(&G, mmd_out))
-            printf("Fichier Mermaid écrit : %s\n", mmd_out);
-        else
-            fprintf(stderr, "Échec d'écriture du fichier Mermaid.\n");
+    printf("=== PARTIE 3 : MATRICES / DISTRIBUTIONS ===\n");
+    t_matrix M = matrix_from_graph(g);
+
+    // Exemple : calcul de M^3
+    t_matrix M3 = matrix_power(&M, 3);
+    printf("M^3 calcule (non affiche, mais disponible pour tests).\n");
+
+    // distribution stationnaire sur le graphe complet (si irreductible + apériodique)
+    float *dist = stationary_distribution(&M, 0.01f, 50);
+    printf("Distribution stationnaire approx. (ligne 1 de M^k):\n");
+    for (int i = 0; i < M.cols; ++i) {
+        printf("pi[%d] = %.4f\n", i + 1, dist[i]);
+    }
+    free(dist);
+
+    // périodicité de la première classe (si elle existe)
+    if (part.size > 0) {
+        t_matrix sub = subMatrix(M, part, 0);
+        int period = getPeriod(sub);
+        printf("Periode de la classe %s : %d\n", part.classes[0].name, period);
+        free_matrix(&sub);
     }
 
-    // -------------------------------------------------
-    // 5. Libération de la mémoire
-    // -------------------------------------------------
-    adj_free(&G);
+    free_matrix(&M);
+    free_matrix(&M3);
+    free_link_array(&links);
+    free_partition(&part);
+    free_graph(g);
 
     return EXIT_SUCCESS;
 }
