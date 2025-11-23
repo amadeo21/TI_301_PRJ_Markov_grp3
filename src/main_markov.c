@@ -8,18 +8,8 @@
 
 int main(int argc, char **argv)
 {
-    if (argc < 2) {
-        printf("Usage: %s <fichier_graphe>\n", argv[0]);
-        printf("Exemple: %s data/exemple1.txt\n", argv[0]);
-        return EXIT_FAILURE;
-    }
-
     const char *filename = argv[1];
     t_graph *g = readGraph(filename);
-    if (!g) {
-        fprintf(stderr, "Impossible de lire le graphe.\n");
-        return EXIT_FAILURE;
-    }
 
     printf("=== PARTIE 1 : GRAPHE / MARKOV / MERMAID ===\n");
     printAdjList(g);
