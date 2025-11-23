@@ -1,12 +1,12 @@
-cmake_minimum_required(VERSION 3.10)
-project(TI_301_PRJ_Markov C)
+cmake_minimum_required(VERSION 3.24)
+project(2526_TI301_PJT C)
 
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_STANDARD 11)
 
-add_executable(markov_project
+add_executable(TI_301_PJT
+        utils.c
+        markov
         main_markov.c
         markov.c
-        hasse.c
-        utils.c
 )
 
