@@ -8,10 +8,7 @@ void init_link_array(t_link_array *arr)
     arr->size = 0;
     arr->capacity = 4;
     arr->data = malloc(sizeof(t_link) * (size_t)arr->capacity);
-    if (!arr->data) {
-        perror("malloc link_array");
-        exit(EXIT_FAILURE);
-    }
+
 }
 
 void free_link_array(t_link_array *arr)
@@ -39,11 +36,7 @@ void add_link_unique(t_link_array *arr, int from, int to)
 
     if (arr->size >= arr->capacity) {
         arr->capacity *= 2;
-        t_link *tmp = realloc(arr->data, sizeof(t_link) * (size_t)arr->capacity);
-        if (!tmp) {
-            perror("realloc links");
-            exit(EXIT_FAILURE);
-        }
+        t_link *tmp = realloc(arr->data, sizeof(t_link) * (size_t)arr->capacity)
         arr->data = tmp;
     }
     arr->data[arr->size].from = from;
