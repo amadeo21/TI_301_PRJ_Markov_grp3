@@ -13,10 +13,6 @@ static float **alloc_matrix_data(int n)
     }
     for (int i = 0; i < n; ++i) {
         data[i] = calloc((size_t)n, sizeof(float));
-        if (!data[i]) {
-            perror("calloc matrix row");
-            exit(EXIT_FAILURE);
-        }
     }
     return data;
 }
@@ -56,7 +52,7 @@ t_matrix createMatrixFromGraph(const t_graph *g)
 
 void copyMatrix(t_matrix *dst, const t_matrix *src)
 {
-    if (!dst || !src || dst->rows != src->rows || dst->cols != src->cols) return;
+
     for (int i = 0; i < src->rows; ++i) {
         for (int j = 0; j < src->cols; ++j) {
             dst->data[i][j] = src->data[i][j];
@@ -67,11 +63,7 @@ void copyMatrix(t_matrix *dst, const t_matrix *src)
 void multiplyMatrices(const t_matrix *A, const t_matrix *B, t_matrix *C)
 {
     int n = A->rows;
-    if (A->cols != n || B->rows != n || B->cols != n ||
-        C->rows != n || C->cols != n) {
-        fprintf(stderr, "Erreur dimensions multiplication matrices\n");
-        return;
-    }
+
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < n; ++j) {
             float sum = 0.0f;

@@ -27,10 +27,6 @@ static void add_arc(t_graph *g, int src, int dest, float proba)
 t_graph *readGraph(const char *filename)
 {
     FILE *f = fopen(filename, "rt");
-    if (!f) {
-        perror("open graph file");
-        return NULL;
-    }
 
     int n;
     if (fscanf(f, "%d", &n) != 1) {
@@ -40,19 +36,9 @@ t_graph *readGraph(const char *filename)
     }
 
     t_graph *g = malloc(sizeof(t_graph));
-    if (!g) {
-        perror("malloc graph");
-        fclose(f);
-        return NULL;
-    }
+
     g->nb_vertices = n;
     g->array = calloc((size_t)n, sizeof(t_adj_list));
-    if (!g->array) {
-        perror("calloc adj array");
-        fclose(f);
-        free(g);
-        return NULL;
-    }
 
     int depart, arrivee;
     float proba;

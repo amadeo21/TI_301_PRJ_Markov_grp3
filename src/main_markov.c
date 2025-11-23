@@ -15,7 +15,7 @@ int main(int argc, char **argv)
     printAdjList(g);
     checkMarkov(g, 0.01f);
     exportMermaidGraph(g, "graph_mermaid.mmd");
-    printf("Fichier Mermaid du graphe : graph_mermaid.mmd\n");
+    printf("pour visualiser graphe : graph_mermaid.mmd\n");
 
     printf("\n=== PARTIE 2 : TARJAN / PARTITION / HASSE ===\n");
     t_partition part = tarjanPartition(g);
@@ -26,7 +26,7 @@ int main(int argc, char **argv)
     build_class_links(g, &part, &links);
     removeTransitiveLinks(&links);
     export_mermaid_hasse(&part, &links, "hasse_mermaid.mmd");
-    printf("Fichier Mermaid du diagramme de Hasse : hasse_mermaid.mmd\n");
+    printf("Pour visualiser diagramme de Hasse : hasse_mermaid.mmd\n");
 
     classify_graph(g, &part, &links);
 
