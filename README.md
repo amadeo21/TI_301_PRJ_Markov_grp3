@@ -107,4 +107,19 @@ Matrices
 
 ---
 Répartition du travail
+Amadéo BERTHELOT
+	•	Implémentation principale de main_markov.c
+	•	Gestion de l’exécution générale du programme
+	•	Vérifications globales et tests finaux
+	•	Sauvegarde du diagramme de Hasse (Mermaid)
+Younes BOUSSAID
+	•	Rédaction complète du README
+	•	Participation à la mise en place de main_markov.c
+	•	Contribution aux modules markov.c et markov.h
+	•	Vérification du bon fonctionnement des matrices et de la distribution stationnaire
+Nicolas YUNGMANN
+	•	Développement de hasse.c et hasse.h
+	•	Implémentation de utils.c / utils.h
+	•	Création des SDD pour Tarjan
+	•	Partition en classes, liens entre classes et diagramme de Hasse
 
