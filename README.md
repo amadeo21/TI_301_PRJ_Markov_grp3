@@ -107,4 +107,3 @@ Matrices
 
 ---
 Répartition du travail
-
