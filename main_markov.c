@@ -20,8 +20,8 @@ int main(int argc, char **argv)
     printf("=== PARTIE 1 : GRAPHE ===\n");
     print_adj_list(g);
     check_markov_graph(g, 0.01f);
-    export_mermaid_graph(g, "graph_mermaid.md");
-    printf("Fichier Mermaid du graphe : graph_mermaid.md\n\n");
+    export_mermaid_graph(g, "graph_mermaid.mmd");
+    printf("Fichier Mermaid du graphe : graph_mermaid.mmd\n\n");
 
     printf("=== PARTIE 2 : TARJAN / PARTITION ===\n");
     t_partition part = tarjan_partition(g);
@@ -31,8 +31,8 @@ int main(int argc, char **argv)
     init_link_array(&links);
     build_class_links(g, &part, &links);
     removeTransitiveLinks(&links);
-    export_mermaid_hasse(&part, &links, "hasse_mermaid.md");
-    printf("Fichier Mermaid du diagramme de Hasse : hasse_mermaid.md\n\n");
+    export_mermaid_hasse(&part, &links, "hasse_mermaid.mmd");
+    printf("Fichier Mermaid du diagramme de Hasse : hasse_mermaid.mmd\n\n");
 
     printf("=== PARTIE 3 : MATRICES / DISTRIBUTIONS ===\n");
     t_matrix M = matrix_from_graph(g);

@@ -131,19 +131,13 @@ int export_mermaid_graph(const t_graph *g, const char *filename)
         return 0;
     }
 
-    fprintf(f,
-            "---\n"
-            "config:\n"
-            "   layout: elk\n"
-            "   theme: neo\n"
-            "   look: neo\n"
-            "---\n\n");
+    // Fichier .mmd = code Mermaid pur
     fprintf(f, "flowchart LR\n");
 
     // déclarations des sommets
     for (int i = 0; i < g->nb_vertices; ++i) {
         char *id = getId(i + 1);
-        fprintf(f, "%s((%d))\n", id, i + 1);
+        fprintf(f, "    %s((%d))\n", id, i + 1);
         free(id);
     }
     fprintf(f, "\n");
@@ -153,7 +147,7 @@ int export_mermaid_graph(const t_graph *g, const char *filename)
         char *from_id = getId(i + 1);
         for (t_arc *cur = g->array[i].head; cur; cur = cur->next) {
             char *to_id = getId(cur->dest);
-            fprintf(f, "%s -->|%.2f|%s\n", from_id, cur->proba, to_id);
+            fprintf(f, "    %s -->|%.2f|%s\n", from_id, cur->proba, to_id);
             free(to_id);
         }
         free(from_id);

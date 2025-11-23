@@ -117,19 +117,12 @@ int export_mermaid_hasse(const t_partition *part, const t_link_array *links, con
         return 0;
     }
 
-    fprintf(f,
-            "---\n"
-            "config:\n"
-            "   layout: elk\n"
-            "   theme: neo\n"
-            "   look: neo\n"
-            "---\n\n");
     fprintf(f, "flowchart TB\n");
 
     // noeuds = classes
     for (int i = 0; i < part->size; ++i) {
         const t_class *c = &part->classes[i];
-        fprintf(f, "C%d(\"%s\\n{", i, c->name);
+        fprintf(f, "    C%d(\"%s\\n{", i, c->name);
         for (int j = 0; j < c->size; ++j) {
             fprintf(f, "%d", c->vertices[j]);
             if (j + 1 < c->size) fprintf(f, ",");
@@ -140,9 +133,7 @@ int export_mermaid_hasse(const t_partition *part, const t_link_array *links, con
 
     // liens
     for (int i = 0; i < links->size; ++i) {
-        int from = links->data[i].from;
-        int to   = links->data[i].to;
-        fprintf(f, "C%d --> C%d\n", from, to);
+        fprintf(f, "    C%d --> C%d\n", links->data[i].from, links->data[i].to);
     }
 
     fclose(f);
