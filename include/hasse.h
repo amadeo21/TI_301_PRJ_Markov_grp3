@@ -1,7 +1,8 @@
 #ifndef HASSE_H
 #define HASSE_H
 
-#include "markov.h"
+#include "graph.h"
+#include "tarjan.h"
 
 /**
  * @brief Lien entre deux classes (pour le diagramme de Hasse).
@@ -36,18 +37,24 @@ void free_link_array(t_link_array *arr);
 void add_link_unique(t_link_array *arr, int from, int to);
 
 /**
- * @brief Construit l'ensemble des liens entre classes à partir du graphe et de la partition.
+ * @brief Construit les liens entre classes à partir du graphe et de la partition.
  */
 void build_class_links(const t_graph *g, const t_partition *part, t_link_array *links);
 
 /**
- * @brief Supprime les liens transitifs (diagramme de Hasse propre).
+ * @brief Supprime les liens transitifs (pour un vrai diagramme de Hasse).
  */
 void removeTransitiveLinks(t_link_array *links);
 
 /**
- * @brief Exporte le diagramme de Hasse au format Mermaid dans un fichier.
+ * @brief Exporte le diagramme de Hasse au format Mermaid (fichier .mmd).
  */
 int export_mermaid_hasse(const t_partition *part, const t_link_array *links, const char *filename);
+
+/**
+ * @brief Affiche les caractéristiques du graphe:
+ * classes transitoires/persistantes, états absorbants, irréductibilité.
+ */
+void classify_graph(const t_graph *g, const t_partition *part, const t_link_array *links);
 
 #endif // HASSE_H

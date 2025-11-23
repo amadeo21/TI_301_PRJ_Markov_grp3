@@ -723,7 +723,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "TI_301_PRJ_Markov"
+			"value" : "TI301_Markov_Project"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1022,7 +1022,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "TI_301_PRJ_Markov_BINARY_DIR",
+			"name" : "TI301_Markov_Project_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1034,7 +1034,7 @@
 			"value" : "/Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/cmake-build-debug"
 		},
 		{
-			"name" : "TI_301_PRJ_Markov_IS_TOP_LEVEL",
+			"name" : "TI301_Markov_Project_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1046,7 +1046,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "TI_301_PRJ_Markov_SOURCE_DIR",
+			"name" : "TI301_Markov_Project_SOURCE_DIR",
 			"properties" : 
 			[
 				{

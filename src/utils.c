@@ -54,28 +54,23 @@ int stack_is_empty(const t_int_stack *stack)
 
 char *getId(int num)
 {
-    // num >= 1
     if (num <= 0) num = 1;
-    // base 26, A..Z
     char buff[32];
     int i = 0;
     int n = num;
     while (n > 0 && i < (int)sizeof(buff) - 1) {
-        n--; // pour que 1 -> A
+        n--;
         int r = n % 26;
         buff[i++] = (char)('A' + r);
         n /= 26;
     }
     buff[i] = '\0';
-
-    // inverser la chaîne
     for (int j = 0; j < i / 2; ++j) {
         char tmp = buff[j];
         buff[j] = buff[i - 1 - j];
         buff[i - 1 - j] = tmp;
     }
-
-    char *res = malloc(i + 1);
+    char *res = malloc((size_t)i + 1);
     if (!res) {
         perror("malloc getId");
         exit(EXIT_FAILURE);

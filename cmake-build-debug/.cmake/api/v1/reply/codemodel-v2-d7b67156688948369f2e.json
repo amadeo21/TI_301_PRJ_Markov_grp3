@@ -9,7 +9,7 @@
 					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.10"
+						"string" : "3.16"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "TI_301_PRJ_Markov",
+					"name" : "TI301_Markov_Project",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "markov_project::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-markov_project-Debug-7f985c1075c081b8874a.json",
-					"name" : "markov_project",
+					"id" : "TI301_Markov::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TI301_Markov-Debug-470e12ba7fdd62b26fd9.json",
+					"name" : "TI301_Markov",
 					"projectIndex" : 0
 				}
 			]

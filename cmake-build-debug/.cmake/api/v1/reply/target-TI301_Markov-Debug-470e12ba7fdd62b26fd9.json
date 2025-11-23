@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "markov_project"
+			"path" : "TI301_Markov"
 		}
 	],
 	"backtrace" : 1,
@@ -10,7 +10,8 @@
 	{
 		"commands" : 
 		[
-			"add_executable"
+			"add_executable",
+			"include_directories"
 		],
 		"files" : 
 		[
@@ -24,7 +25,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 6,
+				"line" : 9,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 7,
 				"parent" : 0
 			}
 		]
@@ -36,6 +43,13 @@
 			[
 				{
 					"fragment" : "-g -std=gnu99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 2,
+					"path" : "/Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/include"
 				}
 			],
 			"language" : "C",
@@ -52,11 +66,13 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4,
+				5
 			]
 		}
 	],
-	"id" : "markov_project::@6890427a1f51a3e7e1df",
+	"id" : "TI301_Markov::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -72,8 +88,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "markov_project",
-	"nameOnDisk" : "markov_project",
+	"name" : "TI301_Markov",
+	"nameOnDisk" : "TI301_Markov",
 	"paths" : 
 	{
 		"build" : ".",
@@ -88,7 +104,9 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4,
+				5
 			]
 		}
 	],
@@ -97,25 +115,37 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "main_markov.c",
+			"path" : "src/main_markov.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "markov.c",
+			"path" : "src/graph.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "hasse.c",
+			"path" : "src/tarjan.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "utils.c",
+			"path" : "src/hasse.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/matrix.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/utils.c",
 			"sourceGroupIndex" : 0
 		}
 	],

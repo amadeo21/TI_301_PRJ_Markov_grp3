@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: TI_301_PRJ_Markov
+# Project: TI301_Markov_Project
 # Configurations: Debug
 # =============================================================================
 
@@ -41,62 +41,84 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target markov_project
+# Object build statements for EXECUTABLE target TI301_Markov
 
 
 #############################################
-# Order-only phony target for markov_project
+# Order-only phony target for TI301_Markov
 
-build cmake_object_order_depends_target_markov_project: phony || .
+build cmake_object_order_depends_target_TI301_Markov: phony || .
 
-build CMakeFiles/markov_project.dir/main_markov.c.o: C_COMPILER__markov_project_unscanned_Debug /Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/main_markov.c || cmake_object_order_depends_target_markov_project
-  DEP_FILE = CMakeFiles/markov_project.dir/main_markov.c.o.d
+build CMakeFiles/TI301_Markov.dir/src/main_markov.c.o: C_COMPILER__TI301_Markov_unscanned_Debug /Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/src/main_markov.c || cmake_object_order_depends_target_TI301_Markov
+  DEP_FILE = CMakeFiles/TI301_Markov.dir/src/main_markov.c.o.d
   FLAGS = -g -std=gnu99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/markov_project.dir
-  OBJECT_FILE_DIR = CMakeFiles/markov_project.dir
-  TARGET_COMPILE_PDB = CMakeFiles/markov_project.dir/
-  TARGET_PDB = markov_project.pdb
+  INCLUDES = -I/Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/include
+  OBJECT_DIR = CMakeFiles/TI301_Markov.dir
+  OBJECT_FILE_DIR = CMakeFiles/TI301_Markov.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/TI301_Markov.dir/
+  TARGET_PDB = TI301_Markov.pdb
 
-build CMakeFiles/markov_project.dir/markov.c.o: C_COMPILER__markov_project_unscanned_Debug /Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/markov.c || cmake_object_order_depends_target_markov_project
-  DEP_FILE = CMakeFiles/markov_project.dir/markov.c.o.d
+build CMakeFiles/TI301_Markov.dir/src/graph.c.o: C_COMPILER__TI301_Markov_unscanned_Debug /Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/src/graph.c || cmake_object_order_depends_target_TI301_Markov
+  DEP_FILE = CMakeFiles/TI301_Markov.dir/src/graph.c.o.d
   FLAGS = -g -std=gnu99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/markov_project.dir
-  OBJECT_FILE_DIR = CMakeFiles/markov_project.dir
-  TARGET_COMPILE_PDB = CMakeFiles/markov_project.dir/
-  TARGET_PDB = markov_project.pdb
+  INCLUDES = -I/Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/include
+  OBJECT_DIR = CMakeFiles/TI301_Markov.dir
+  OBJECT_FILE_DIR = CMakeFiles/TI301_Markov.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/TI301_Markov.dir/
+  TARGET_PDB = TI301_Markov.pdb
 
-build CMakeFiles/markov_project.dir/hasse.c.o: C_COMPILER__markov_project_unscanned_Debug /Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/hasse.c || cmake_object_order_depends_target_markov_project
-  DEP_FILE = CMakeFiles/markov_project.dir/hasse.c.o.d
+build CMakeFiles/TI301_Markov.dir/src/tarjan.c.o: C_COMPILER__TI301_Markov_unscanned_Debug /Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/src/tarjan.c || cmake_object_order_depends_target_TI301_Markov
+  DEP_FILE = CMakeFiles/TI301_Markov.dir/src/tarjan.c.o.d
   FLAGS = -g -std=gnu99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/markov_project.dir
-  OBJECT_FILE_DIR = CMakeFiles/markov_project.dir
-  TARGET_COMPILE_PDB = CMakeFiles/markov_project.dir/
-  TARGET_PDB = markov_project.pdb
+  INCLUDES = -I/Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/include
+  OBJECT_DIR = CMakeFiles/TI301_Markov.dir
+  OBJECT_FILE_DIR = CMakeFiles/TI301_Markov.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/TI301_Markov.dir/
+  TARGET_PDB = TI301_Markov.pdb
 
-build CMakeFiles/markov_project.dir/utils.c.o: C_COMPILER__markov_project_unscanned_Debug /Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/utils.c || cmake_object_order_depends_target_markov_project
-  DEP_FILE = CMakeFiles/markov_project.dir/utils.c.o.d
+build CMakeFiles/TI301_Markov.dir/src/hasse.c.o: C_COMPILER__TI301_Markov_unscanned_Debug /Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/src/hasse.c || cmake_object_order_depends_target_TI301_Markov
+  DEP_FILE = CMakeFiles/TI301_Markov.dir/src/hasse.c.o.d
   FLAGS = -g -std=gnu99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/markov_project.dir
-  OBJECT_FILE_DIR = CMakeFiles/markov_project.dir
-  TARGET_COMPILE_PDB = CMakeFiles/markov_project.dir/
-  TARGET_PDB = markov_project.pdb
+  INCLUDES = -I/Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/include
+  OBJECT_DIR = CMakeFiles/TI301_Markov.dir
+  OBJECT_FILE_DIR = CMakeFiles/TI301_Markov.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/TI301_Markov.dir/
+  TARGET_PDB = TI301_Markov.pdb
+
+build CMakeFiles/TI301_Markov.dir/src/matrix.c.o: C_COMPILER__TI301_Markov_unscanned_Debug /Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/src/matrix.c || cmake_object_order_depends_target_TI301_Markov
+  DEP_FILE = CMakeFiles/TI301_Markov.dir/src/matrix.c.o.d
+  FLAGS = -g -std=gnu99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  INCLUDES = -I/Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/include
+  OBJECT_DIR = CMakeFiles/TI301_Markov.dir
+  OBJECT_FILE_DIR = CMakeFiles/TI301_Markov.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/TI301_Markov.dir/
+  TARGET_PDB = TI301_Markov.pdb
+
+build CMakeFiles/TI301_Markov.dir/src/utils.c.o: C_COMPILER__TI301_Markov_unscanned_Debug /Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/src/utils.c || cmake_object_order_depends_target_TI301_Markov
+  DEP_FILE = CMakeFiles/TI301_Markov.dir/src/utils.c.o.d
+  FLAGS = -g -std=gnu99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  INCLUDES = -I/Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/include
+  OBJECT_DIR = CMakeFiles/TI301_Markov.dir
+  OBJECT_FILE_DIR = CMakeFiles/TI301_Markov.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/TI301_Markov.dir/
+  TARGET_PDB = TI301_Markov.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target markov_project
+# Link build statements for EXECUTABLE target TI301_Markov
 
 
 #############################################
-# Link the executable markov_project
+# Link the executable TI301_Markov
 
-build markov_project: C_EXECUTABLE_LINKER__markov_project_Debug CMakeFiles/markov_project.dir/main_markov.c.o CMakeFiles/markov_project.dir/markov.c.o CMakeFiles/markov_project.dir/hasse.c.o CMakeFiles/markov_project.dir/utils.c.o
+build TI301_Markov: C_EXECUTABLE_LINKER__TI301_Markov_Debug CMakeFiles/TI301_Markov.dir/src/main_markov.c.o CMakeFiles/TI301_Markov.dir/src/graph.c.o CMakeFiles/TI301_Markov.dir/src/tarjan.c.o CMakeFiles/TI301_Markov.dir/src/hasse.c.o CMakeFiles/TI301_Markov.dir/src/matrix.c.o CMakeFiles/TI301_Markov.dir/src/utils.c.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -mmacosx-version-min=14.6
-  OBJECT_DIR = CMakeFiles/markov_project.dir
+  OBJECT_DIR = CMakeFiles/TI301_Markov.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/markov_project.dir/
-  TARGET_FILE = markov_project
-  TARGET_PDB = markov_project.pdb
+  TARGET_COMPILE_PDB = CMakeFiles/TI301_Markov.dir/
+  TARGET_FILE = TI301_Markov
+  TARGET_PDB = TI301_Markov.pdb
 
 
 #############################################
@@ -132,7 +154,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/amadeoberthelot/CLionProjects/TI_301_PRJ_Markov_grp3/cmake-build-debug
 
-build all: phony markov_project
+build all: phony TI301_Markov
 
 # =============================================================================
 # Built-in targets
