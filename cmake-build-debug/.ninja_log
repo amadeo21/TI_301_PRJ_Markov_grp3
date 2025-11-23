@@ -1,0 +1,19 @@
+# ninja log v6
+4	236	1763895055648475015	CMakeFiles/markov_project.dir/utils.c.o	8ac1d65739acdcc2
+2	237	1763895055646508838	CMakeFiles/markov_project.dir/main_markov.c.o	111d86e0dc4e2476
+4	237	1763895055647931482	CMakeFiles/markov_project.dir/hasse.c.o	7166df0235a0214a
+4	242	1763895055647781401	CMakeFiles/markov_project.dir/markov.c.o	ed7f0deefdd2a43b
+242	454	1763895055886110482	markov_project	717f00b118b79780
+11	266	1763895910502215828	CMakeFiles/markov_project.dir/hasse.c.o	7166df0235a0214a
+10	268	1763895910501240592	CMakeFiles/markov_project.dir/markov.c.o	ed7f0deefdd2a43b
+268	417	1763895910759407089	markov_project	717f00b118b79780
+6	241	1763918955644781331	CMakeFiles/markov_project.dir/hasse.c.o	7166df0235a0214a
+4	243	1763918955643136229	CMakeFiles/markov_project.dir/markov.c.o	ed7f0deefdd2a43b
+243	380	1763918955881858648	markov_project	717f00b118b79780
+4	250	1763920462418230503	CMakeFiles/markov_project.dir/hasse.c.o	7166df0235a0214a
+2	252	1763920462416666858	CMakeFiles/markov_project.dir/markov.c.o	ed7f0deefdd2a43b
+252	394	1763920462666054633	markov_project	717f00b118b79780
+3	230	1763920548527397269	CMakeFiles/markov_project.dir/main_markov.c.o	111d86e0dc4e2476
+230	355	1763920548754373566	markov_project	717f00b118b79780
+4	220	1763920571684883375	CMakeFiles/markov_project.dir/main_markov.c.o	111d86e0dc4e2476
+220	340	1763920571900925792	markov_project	717f00b118b79780
